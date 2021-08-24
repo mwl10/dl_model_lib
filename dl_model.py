@@ -71,14 +71,14 @@ def initialize_parameters_deep(layer_dims):
         # parameters['W' + str(l)] = ...
         # parameters['b' + str(l)] = ...
         # YOUR CODE STARTS HERE
-        parameters["W" + str(l)] = np.random.randn(layer_dims[l], layer_dims[l-1]) * .01
+        # added He et al., 2015 initialization
+        parameters["W" + str(l)] = np.random.randn(layer_dims[l], layer_dims[l-1]) * np.sqrt(2./layers_dims[l-1])
         parameters["b" + str(l)] = np.zeros((layer_dims[l], 1))
         
         
         # YOUR CODE ENDS HERE
         
-        assert(parameters['W' + str(l)].shape == (layer_dims[l], layer_dims[l - 1]))
-        assert(parameters['b' + str(l)].shape == (layer_dims[l], 1))
+        
 
         
     return parameters
@@ -625,7 +625,7 @@ def predict(X, y, parameters):
     
     # Forward propagation
     probas, caches = L_model_forward(X, parameters)
-    
+
 
     
     # convert probas to 0/1 predictions
