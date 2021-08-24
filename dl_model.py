@@ -72,7 +72,7 @@ def initialize_parameters_deep(layer_dims):
         # parameters['b' + str(l)] = ...
         # YOUR CODE STARTS HERE
         # added He et al., 2015 initialization
-        parameters["W" + str(l)] = np.random.randn(layer_dims[l], layer_dims[l-1]) * np.sqrt(2./layers_dims[l-1])
+        parameters["W" + str(l)] = np.random.randn(layer_dims[l], layer_dims[l-1]) * np.sqrt(2./layer_dims[l-1])
         parameters["b" + str(l)] = np.zeros((layer_dims[l], 1))
         
         
