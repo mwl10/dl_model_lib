@@ -260,9 +260,6 @@ def L_model_backward(AL, Y, caches):
 
     dAL = - (np.divide(Y, AL) - np.divide(1 - Y, 1 - AL))
     
-    
-    # YOUR CODE ENDS HERE
-    
     # Lth layer (SIGMOID -> LINEAR) gradients. Inputs: "dAL, current_cache". Outputs: "grads["dAL-1"], grads["dWL"], grads["dbL"]
 
     current_cache = caches[L-1]
@@ -271,7 +268,6 @@ def L_model_backward(AL, Y, caches):
     grads["dW" + str(L)] = dW_temp
     grads["db" + str(L)] = db_temp
     
-    # YOUR CODE ENDS HERE
     
     # Loop from l=L-2 to l=0
     for l in reversed(range(L-1)):
@@ -286,8 +282,6 @@ def L_model_backward(AL, Y, caches):
 
 
     return grads
-
-
 
 
 def update_parameters(params, grads, learning_rate):
@@ -316,8 +310,6 @@ def update_parameters(params, grads, learning_rate):
                                                                    
                                                                    
     return parameters
-
-
 
 
 def plot_costs(costs, learning_rate=0.0075):
@@ -361,8 +353,6 @@ def L_layer_model(X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 30
         # Compute cost.
         cost = compute_cost(AL, Y)
         
-        
-        # YOUR CODE ENDS HERE
     
         # Backward propagation.
         grads = L_model_backward(AL, Y, caches)
