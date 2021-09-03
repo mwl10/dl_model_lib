@@ -1,3 +1,9 @@
+import numpy as np
+from rnn_utils import *
+
+
+
+
 def rnn_cell_forward(xt, a_prev, parameters):
     """
     Implements a single forward step of the RNN-cell

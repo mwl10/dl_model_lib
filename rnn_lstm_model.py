@@ -1,3 +1,12 @@
+import numpy as np
+from rnn_utils import *
+
+
+
+
+
+
+
 def lstm_cell_forward(xt, a_prev, c_prev, parameters):
     """
     Implement a single forward step of the LSTM-cell as described in Figure (4)
